@@ -1,10 +1,14 @@
 use text_io::read;
 use yansi::Paint;
 
+mod actions;
+
 fn main() {
-    println!("Hello, world!");
+    actions::welcome();
     let mut playing = true;
-    let mut save: String = String::new();
+    let mut actions: Vec<String> = Vec::new();
+
+
 
     while playing {
 
@@ -12,13 +16,14 @@ fn main() {
 
         if action == "exit" {
             println!("{}", Paint::blue("Thank you for playing Rhonn"));
-            println!("Here is your save:{}", Paint::green(&save));
+            let join = actions.join(" ");
+            println!("Here is your save (copy this): {}", Paint::green(join));
             playing = false;
 
         } else {
-            save.push_str(" ");
-            save.push_str(&action);
-            println!("Action performed: {}", Paint::green(action));
+            println!("Action performed: {}", Paint::green(&action));
+            actions.push(action);
         }
 
     }
+}
