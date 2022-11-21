@@ -1,0 +1,43 @@
+{
+  "name": "Rust",
+  "image": "mcr.microsoft.com/devcontainers/rust:1-buster",
+  "settings": {
+    "githubPullRequests.pullRequestTitle": "custom",
+    "githubPullRequests.queries": [
+      {
+        "label": "Waiting For My Review",
+        "query": "is:open review-requested:${user}"
+      },
+      {
+        "label": "Assigned To Me",
+        "query": "is:open assignee:${user}"
+      },
+      {
+        "label": "Created By Me",
+        "query": "is:open author:${user}"
+      },
+      {
+        "label": "Mentioned Me",
+        "query": "is:open mentions:${user}"
+      }
+    ],
+    "githubIssues.issueBranchTitle": "feature/${issueNumber}-${sanitizedLowercaseIssueTitle}",
+    "githubIssues.useBranchForIssues": "prompt",
+    "githubIssues.queries": [
+      {
+        "label": "Assigned To Me",
+        "query": "repo:bjerkio/rhonn repo: assignee:${user} sort:created-desc"
+      }
+    ]
+  },
+
+  "extensions": [
+    "rust-lang.rust",
+    "matklad.rust-analyzer",
+    "vadimcn.vscode-lldb",
+    "GitHub.vscode-pull-request-github"
+  ]
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
