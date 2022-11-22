@@ -8,10 +8,7 @@ fn main() {
     let mut playing = true;
     let mut actions: Vec<String> = Vec::new();
 
-
-
     while playing {
-
         let action: String = read!();
 
         if action == "exit" {
@@ -19,11 +16,9 @@ fn main() {
             let join = actions.join(" ");
             println!("Here is your save (copy this): {}", Paint::green(join));
             playing = false;
-
         } else {
             println!("Action performed: {}", Paint::green(&action));
             actions.push(action);
         }
-
     }
 }
