@@ -1,0 +1,13 @@
+description = """
+'Come get some!', the drunk shouts. He brandishes a knife.
+"""
+action_prompt = "What do you do?"
+
+[[action]]
+word = "attack"
+destination = "start-combat"
+
+[[action]]
+word = "bribe"
+destination = "start-bribery"
+function = "helloFunc"

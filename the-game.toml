@@ -1,0 +1,8 @@
+
+[start]
+actions = [ "end", "banana-phone" ]
+
+[banana-phone]
+triggers = [ "call mama" ]
+
+[end]

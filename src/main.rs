@@ -1,14 +1,20 @@
 use text_io::read;
 use yansi::Paint;
+use story::start::Scene;
+
+use crate::story::start::makeStartScene;
 
 mod actions;
+mod story;
 
 fn main() {
     actions::welcome();
     let mut playing = true;
     let mut actions: Vec<String> = Vec::new();
 
+    let h: Scene = makeStartScene();
 
+    println!("{}",h.description);
 
     while playing {
 
@@ -24,6 +30,5 @@ fn main() {
             println!("Action performed: {}", Paint::green(&action));
             actions.push(action);
         }
-
     }
 }

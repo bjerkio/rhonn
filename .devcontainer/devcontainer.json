@@ -1,6 +1,10 @@
 {
   "name": "Rust",
   "image": "mcr.microsoft.com/devcontainers/rust:1-buster",
+  "runArgs": [
+    "--network=bridge",
+    "--memory=6gb"
+  ],
   "settings": {
     "githubPullRequests.pullRequestTitle": "custom",
     "githubPullRequests.queries": [
@@ -30,14 +34,11 @@
       }
     ]
   },
-
   "extensions": [
-    "rust-lang.rust",
     "matklad.rust-analyzer",
     "vadimcn.vscode-lldb",
     "GitHub.vscode-pull-request-github"
   ]
-
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }
